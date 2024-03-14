@@ -1,12 +1,16 @@
 #[macro_use] extern crate rocket;
 #[macro_use] extern crate rocket_contrib;
 
+use std::vec;
+
+use rocket::http::hyper::request::Builder;
 use rocket_contrib::json::Json;
 use serde::{Deserialize, Serialize};
 use rocket::form::Form;
+use rsfbclient::prelude::*;
 
 
-#[derive(Debug, FromForm, Deserialize, Serialize)]
+#[derive(Debug, FromForm, Deserialize, Serialize, Clone)]
 struct FormDados {
     dado1: String,
     dado2: String,
@@ -14,11 +18,32 @@ struct FormDados {
     dado4: String,
 }
 
+
+
 #[post("/coleta", data = "<form_dados>")]
-fn coleta (form_dados: Form<FormDados>)-> String{
+fn coleta(form_dados: Form<FormDados>)-> String{    
     let FormDados {dado1, dado2, dado3, dado4} = form_dados.into_inner();
-    format!("dado1: {}, dado2: {}, dado3: {}, dado4: {}",dado1, dado2, dado3, dado4)
+    return format!("dados cadastrados");
+
+
 }
+
+#[get("/busca_dados")]
+fn busca(){
+    let conn = rsfbclient::builder_native()
+    .with_dyn_link()
+    .with_remote()
+    .host("http://localhost:8080")
+    .connect();
+
+    let row: Vec<(String, String)> 
+
+    }
+
+
+}
+
+
 
 #[get("/")]
 fn index()->&'static str{
@@ -28,5 +53,5 @@ fn index()->&'static str{
 #[rocket::main]
 async fn main() {
     println!("Hello, world!");
-    rocket::build().mount("/", routes![index, coleta]).launch().await.unwrap();
+    rocket::build().mount("/", routes![index, coleta, busca]).launch().await.unwrap();
 }
