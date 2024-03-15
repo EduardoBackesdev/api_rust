@@ -34,16 +34,17 @@ fn busca(){
     .with_dyn_link()
     .with_remote()
     .host("http://localhost:8080")
+    .db_name("TESTE.fdb")
     .connect();
 
-    let row: Vec<(String, String)> 
+    let rows: Vec<(String, String)> = conn.query(
+        "SELECT dado1, dado2 FROM coleta_dados",(),
+    )?;
 
-    }
+    
 
 
 }
-
-
 
 #[get("/")]
 fn index()->&'static str{
