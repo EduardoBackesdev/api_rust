@@ -216,9 +216,7 @@ checksum = "8eaf5903dcbc0a39312feb77df2ff4c76387d591b9fc7b04a238dcf8bb62639a"
 dependencies = [
  "android-tzdata",
  "iana-time-zone",
- "js-sys",
  "num-traits",
- "wasm-bindgen",
  "windows-targets 0.52.4",
 ]
 
@@ -603,9 +601,9 @@ checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 
 [[package]]
 name = "h2"
-version = "0.3.24"
+version = "0.3.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb2c4422095b67ee78da96fbb51a4cc413b3b25883c7717ff7ca1ab31022c9c9"
+checksum = "4fbd2820c5e49886948654ab546d0688ff24530286bdcf8fca3cefb16d4618eb"
 dependencies = [
  "bytes",
  "fnv",
@@ -1585,9 +1583,9 @@ dependencies = [
 
 [[package]]
 name = "rsfbclient"
-version = "0.16.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c079142bd94da7591c30ad0c603851988b8f44f811878cb17577e3edcd512112"
+checksum = "75f2e70cd2daca36454774795a00eb317200551f9ad7b7871c3b282f84ce560c"
 dependencies = [
  "chrono",
  "lru-cache",
@@ -1600,9 +1598,9 @@ dependencies = [
 
 [[package]]
 name = "rsfbclient-core"
-version = "0.16.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af24e5a7e550d1706ee2e4ce28d33eedb24ab76fa9d72a5809fd816ae25cf583"
+checksum = "a47cd1876d2a3ed3b3a3847677ee0929c0a7ad3bb704914455320a441c5823c5"
 dependencies = [
  "chrono",
  "encoding",
@@ -1613,9 +1611,9 @@ dependencies = [
 
 [[package]]
 name = "rsfbclient-derive"
-version = "0.16.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca7cb08b88f0307ee59ab3b7bc57279e920a790eada5ad0ec93405a7f8eaefcf"
+checksum = "b59b35360c930669f9b867b3fdf10df6dbbb288c9fcf9044abd8da31725d9ef0"
 dependencies = [
  "quote 1.0.35",
  "syn 1.0.109",
@@ -1623,9 +1621,9 @@ dependencies = [
 
 [[package]]
 name = "rsfbclient-native"
-version = "0.16.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "059f097e8cfa5d591462d5e4a27d729af52c52f18df31134de3006dcb4371311"
+checksum = "ab3230e332a6cce928f1899f99e3cfbd5644500895b7d912c5fe8dc180b8cd16"
 dependencies = [
  "byteorder",
  "glob",
@@ -1966,9 +1964,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-stream"
-version = "0.1.14"
+version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "397c988d37662c7dda6d2208364a706264bf3d6138b11d436cbac0ad38832842"
+checksum = "267ac89e0bec6e691e5813911606935d77c476ff49024f98abcea3e7b15e37af"
 dependencies = [
  "futures-core",
  "pin-project-lite",
