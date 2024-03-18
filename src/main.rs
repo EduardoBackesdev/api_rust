@@ -22,19 +22,16 @@ struct FormDados {
 
 #[post("/coleta", data = "<form_dados>")]
 fn coleta(form_dados: Form<FormDados>)-> String{   
-        #[cfg(feature = "linking")]{ 
+        
         let mut conn = rsfbclient::builder_native()
         .with_dyn_link()
         .with_remote()
-        .host("localhost")
-        .db_name("teste.fdb")
+        .db_name("C:/Users/User/Desktop/teste/TESTE.FDB")
         .user("SYSDBA")
         .pass("masterkey")
         .connect().expect("erro");
-        let _query= conn.execute(&format!("INSERT INTO coleta_dados (id,dado1,dado2,dado3,dado4) VALUES ({},{},{},{},{});", form_dados.id, form_dados.dado1, form_dados.dado2, form_dados.dado3, form_dados.dado4),());
-        }
-        format!("{}, {}, {}, {}", form_dados.dado1, form_dados.dado2, form_dados.dado3, form_dados.dado4,  )
-        
+        let query= conn.execute(&format!("INSERT INTO coleta_dados (id,dado1,dado2,dado3,dado4) VALUES ({},{},{},{},{});", form_dados.id, form_dados.dado1, form_dados.dado2, form_dados.dado3, form_dados.dado4),());
+        format!("{}, {}, {}, {}, {}", form_dados.id, form_dados.dado1, form_dados.dado2, form_dados.dado3, form_dados.dado4)  
 }
 
 
