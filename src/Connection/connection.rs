@@ -2,7 +2,7 @@ use rsfbclient_native::NativeFbClient;
 use rsfbclient::{charset::WIN_1252, FbError, DynLink, Connection};
 
 
-pub fn connection (db_path: String)->Result<Connection<NativeFbClient<DynLink>>, FbError> {
+pub fn connection (db_path: &str)->Result<Connection<NativeFbClient<DynLink>>, FbError> {
     let conn: Connection<NativeFbClient<DynLink>> = rsfbclient::builder_native()
     .with_dyn_link()
     .with_remote()
