@@ -10,5 +10,11 @@ mod connection;
 #[rocket::main]
 async   fn main() {
     println!("Hello, world!");
-    rocket::build().mount("/api", routes![]).launch().await.unwrap();
+    rocket::build().mount("/api", routes![
+        post_fn::post_fn,
+        
+        
+        
+        
+        ]).launch().await.unwrap();
 }

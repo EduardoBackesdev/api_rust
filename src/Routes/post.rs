@@ -15,15 +15,14 @@ pub struct user{
     password: String,
 }
 
-
 #[post("/cadastro", data = "<form>")]
 pub fn post_fn (form:Form<user>)-> std::io::Result<()>{
-    let db_path:String= String::from("Eduardo");
+    let db_path:String= String::from("C:/Users/User/Desktop/teste/API_EDUARDO.FDB");
     let mut conn = connection::connection(db_path)
     .ok()
     .unwrap();
 
-    conn.execute(&format!("INSERT INTO users (login, password) VALUES ('{}', '{}')",&form.login, &form.password ),())
+    conn.execute(&format!("INSERT INTO usuarios (login, password) VALUES ('{}', '{}')",&form.login, &form.password ),())
     .ok()
     .expect("Erro ao cadastrar usuario");
     Ok(())
