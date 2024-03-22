@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 rocket = "0.5.0"
 rocket_contrib = {version = "0.4.11", features = ["json"]}
-rsfbclient = "0.24.0"
+rsfbclient = "0.23.0"
 serde = {version = "1.0", features = ["derive"]}
+rsfbclient-native = "=0.23.0"
 serde_json = "1.0"
