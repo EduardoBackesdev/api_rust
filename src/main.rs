@@ -2,8 +2,8 @@ use std::path;
 
 #[macro_use] extern crate rocket;
 
-#[path="./Routes/post.rs"]
-mod post_fn;
+#[path="./Routes/cadastro_user.rs"]
+mod cadastro_user;
 #[path="./Connection/connection.rs"]
 mod connection;
 
@@ -11,7 +11,7 @@ mod connection;
 async   fn main() {
     println!("Hello, world!");
     rocket::build().mount("/api", routes![
-        post_fn::post_fn,
+        cadastro_user::cadastro_user,
         
         
         

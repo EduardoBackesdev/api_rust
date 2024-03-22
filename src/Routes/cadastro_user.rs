@@ -16,7 +16,7 @@ pub struct user{
 }
 
 #[post("/cadastro", data = "<form>")]
-pub fn post_fn (form:Form<user>)-> std::io::Result<()>{
+pub fn cadastro_user (form:Form<user>)-> std::io::Result<()>{
     let db_path="C:/Users/User/Desktop/teste/API_EDUARDO.FDB";
     let mut conn = connection::connection(&db_path)
     .ok()
